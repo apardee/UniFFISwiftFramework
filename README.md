@@ -1,8 +1,8 @@
-# UniFFI Swift XCFramework Template
+# UniFFI Swift Package / Binary XCFramework Template
 
 A project template bridging Rust logic to Swift using [UniFFI](https://github.com/mozilla/uniffi-rs).
 
-The Rust project in this repository includes a few basic UniFFI proc macros used generate Swift bindings. The `[framework](framework)` directory contains the artifacts produced by UniFFI embedded in a binary `XCFramework` that can be imported into a Swift project using [Swift Package Manager](https://www.swift.org/documentation/package-manager/). See the reference section for more detailed documentation on these topics.
+The Rust project in this repository includes a few basic UniFFI proc macros used generate Swift bindings. The `framework` directory contains the artifacts produced by UniFFI embedded in a binary `XCFramework` that can be imported into a Swift project using [Swift Package Manager](https://www.swift.org/documentation/package-manager/). See the reference section for more detailed documentation on these topics.
 
 ## Building the Project
 
