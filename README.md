@@ -12,7 +12,7 @@ To build the contents of the resulting Swift package, run the build script in th
 ./build-swift.sh
 ```
 
-The build script itself works a reasonable guide for the steps that result in the final Swift framework, but in general the process is:
+The build script itself works as a reasonable guide for the steps that result in the final Swift framework, but in general the process is:
 
 1. Build the Rust project with `cargo build`.
 2. Generate Swift bindings to the project with UniFFI `bindgen`.
@@ -27,7 +27,26 @@ After building the contents of the framework, the artifacts committed to this re
 
 ## Consuming the Swift Package
 
+The Swift Package defined in this project can be consumed by adding the project dependency:
 
+```swift
+    dependencies: [
+        .package(url: "https://github.com/apardee/uniffi-swift-framework.git", from: "1.0.0"),
+    ],
+```
+
+And linking the target to the library or application:
+
+```swift
+    .executableTarget(
+        name: "ExampleSwiftApp",
+        dependencies: [
+            "UniFFISwiftFramework"
+        ]),
+```
+
+> [!NOTE]  
+> This project bundles the Swift Project definition and the Rust project into the same respository for simplicity. When added to a project like this, Swift Package Manager will clone the entire repo including the Rust source. A better approach would serve the target Swift Package in a separate repository.
 
 ## Reference
 
