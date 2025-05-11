@@ -1,9 +1,9 @@
 #!/bin/bash
+set -e
+set -eo pipefail
 
 TEMP_PATH=./temp
-INSTALL_PATH=./install
 
 rm -rf $TEMP_PATH
-rm -rf $INSTALL_PATH
 
 cargo clean

@@ -12,12 +12,13 @@ SOURCE_LIB_PATH=./target/release/lib${PACKAGE_NAME}.a
 mkdir -p $TEMP_PATH
 mkdir -p $BINDINGS_PATH
 mkdir -p $INSTALL_PATH
+mkdir -p $INSTALL_PATH/Sources/
 
 cargo build --release
 
 cargo run --bin uniffi-bindgen generate --library $SOURCE_LIB_PATH --language swift --out-dir $BINDINGS_PATH
 
-mv $TEMP_PATH/bindings/$PACKAGE_NAME.swift $INSTALL_PATH/$PACKAGE_NAME.swift
+mv $TEMP_PATH/bindings/$PACKAGE_NAME.swift $INSTALL_PATH/Sources/$PACKAGE_NAME.swift
 mv $TEMP_PATH/bindings/${PACKAGE_NAME}FFI.modulemap $TEMP_PATH/bindings/module.modulemap
 
 cargo build --release --target=aarch64-apple-ios-sim

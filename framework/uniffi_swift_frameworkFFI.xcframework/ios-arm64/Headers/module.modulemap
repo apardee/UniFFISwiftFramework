@@ -1,0 +1,4 @@
+module uniffi_swift_frameworkFFI {
+    header "uniffi_swift_frameworkFFI.h"
+    export *
+}
